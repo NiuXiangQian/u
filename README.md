@@ -10,9 +10,14 @@
 - 将支持web控制台进行动态配置
 - 支持更丰富的api操作
 - ...
-### 使用截图
+### 效果图
+![效果图1](https://github.com/1603565290m/u/blob/master/doc/demo_1.png)
+![效果图2](https://github.com/1603565290m/u/blob/master/doc/demo_2.png)
   待完善...
-### 
+###  环境需要
+- Java 1.8.0_211
+- Maven 3.6.3
+- Redis  3.x
 
 
 
