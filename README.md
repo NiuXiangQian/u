@@ -18,7 +18,7 @@ github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m
 - ...
 ### Web方式效果图
 ![效果图1](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_1.png)
-![效果图2/](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_2.png)
+![效果图2](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_2.png)
   待完善...
   
 ### API方式使用
