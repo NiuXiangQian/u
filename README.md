@@ -3,6 +3,9 @@
 以打造一个高性能，可快速部署的短网址服务平台<br>
 gitee地址：[https://gitee.com/m1603565290/url](https://gitee.com/m1603565290/url) <br>
 github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m/u)
+
+### 我能干什么
+我只为缩短你的超链接url，让你变得短短的，不。。。是你的url变得短短的
 ## 系统说明：
 - 基于 Spring Boot Redis实现的一个短网址平台
 ### 目前
@@ -14,8 +17,8 @@ github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m
 - 支持更丰富的api操作
 - ...
 ### Web方式效果图
-![效果图1/doc/demo_1.png](doc/demo_1.png)
-![效果图2/doc/demo_2.png](doc/demo_2.png)
+![效果图1](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_1.png)
+![效果图2/](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_2.png)
   待完善...
   
 ### API方式使用
