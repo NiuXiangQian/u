@@ -2,6 +2,7 @@ package com.github.niu.u.controller;
 
 import com.github.niu.u.common.core.R;
 import com.github.niu.u.common.exception.BaseException;
+import com.github.niu.u.model.vo.ShortUrlVo;
 import com.github.niu.u.service.URLService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class URLController {
         if (StringUtils.isEmpty(url)){
             return R.failed("url不能为空");
         }
-        String shortURL = urlService.generate(url,
+        ShortUrlVo shortURL = urlService.generate(url,
                 60L * 30L  //默认有效时间 30分钟
         );
 

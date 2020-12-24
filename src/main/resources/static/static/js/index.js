@@ -25,7 +25,7 @@ layui.config().use(['form','jquery','layer'], function(){
                     console.log(r);
                     if(d.success){
                         top.layer.msg("生成成功！");
-                        $('#result_a').text(d.data).attr("href",d.data)
+                        $('#result_a').text(d.data.shortUrl).attr("href",d.data.shortUrl)
                         $('#result_div').css("display","block")
                     }else {
                         top.layer.msg("生成失败！");

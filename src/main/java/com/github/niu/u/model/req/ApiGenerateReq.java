@@ -1,6 +1,7 @@
-package com.github.niu.u.model;
+package com.github.niu.u.model.req;
 
 
+import com.github.niu.u.model.req.AkSkReq;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -12,33 +13,15 @@ import org.hibernate.validator.constraints.NotBlank;
  * @updateRemark:
  * @version: 1.0
  **/
-public class ApiGenerateReq {
+public class ApiGenerateReq  {
 
 
-    @NotBlank(message = "ak不能为空")
-   private  String ak ;
-    @NotBlank(message = "sk不能为空")
-   private  String sk ;
     @NotBlank(message = "url不能为空")
    private  String url;
 
    private Long valid;
 
-    public String getAk() {
-        return ak;
-    }
 
-    public void setAk(String ak) {
-        this.ak = ak;
-    }
-
-    public String getSk() {
-        return sk;
-    }
-
-    public void setSk(String sk) {
-        this.sk = sk;
-    }
 
     public String getUrl() {
         return url;

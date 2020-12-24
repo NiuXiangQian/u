@@ -2,14 +2,13 @@ package com.github.niu.u.controller;
 
 import com.github.niu.u.common.core.R;
 import com.github.niu.u.common.exception.BaseException;
-import com.github.niu.u.model.ApiGenerateReq;
+import com.github.niu.u.model.req.ApiGenerateReq;
+import com.github.niu.u.model.vo.ShortUrlVo;
 import com.github.niu.u.service.ApiAccessService;
 import com.github.niu.u.service.URLService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -23,22 +22,47 @@ import javax.validation.Valid;
  * @version: 1.0
  **/
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class ApiURLController {
     @Autowired
     private ApiAccessService apiAccessService;
     @Autowired
     private URLService urlService;
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
 
-    @PostMapping("/v1/generate")
-    public R<String> generate(@Valid @RequestBody ApiGenerateReq apiGenerateReq) throws BaseException {
-       boolean acc =  apiAccessService.acceptAccess(apiGenerateReq.getAk(),apiGenerateReq.getSk());
-       if (acc){
-          String shortURL = urlService.generate(apiGenerateReq.getUrl(),apiGenerateReq.getValid());
+    /**
+     * 生成一个短链接
+     * @author nxq
+     * @param apiGenerateReq:
+     * @return com.github.niu.u.common.core.R<java.lang.String>
+     */
+    @PostMapping("/generate")
+    public R<ShortUrlVo> generate(@Valid @RequestBody ApiGenerateReq apiGenerateReq) throws BaseException {
+          ShortUrlVo shortURL = urlService.generate(apiGenerateReq.getUrl(),apiGenerateReq.getValid());
           return R.ok(shortURL);
-       }
+    }
+    /**
+     * 根据短链接的target解析原地址
+     * @author nxq
+     * @param target:
+     * @return com.github.niu.u.common.core.R<com.github.niu.u.model.vo.ShortUrlVo>
+     */
+    @GetMapping("/restore/{target}")
+    public R<ShortUrlVo> restore(@PathVariable String target) throws BaseException {
 
-        return R.failed("对不起，您没有权限访问，请检查ak 和 sk");
+        return R.ok(urlService.restoreByTarget(target));
+    }
+    /**
+     * 根据完整的短链接解析原地址
+     * @author nxq
+     * @param url:
+     * @return com.github.niu.u.common.core.R<com.github.niu.u.model.vo.ShortUrlVo>
+     */
+    @GetMapping("/restoreFullUrl/{url}")
+    public R<ShortUrlVo> restoreFullUrl(@PathVariable String url) throws BaseException {
+
+        return R.ok(urlService.restoreByTarget(url));
     }
 
 }
