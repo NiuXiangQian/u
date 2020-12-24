@@ -11,8 +11,8 @@
 - 支持更丰富的api操作
 - ...
 ### 效果图
-![效果图1](https://github.com/1603565290m/u/blob/master/doc/demo_1.png)
-![效果图2](https://github.com/1603565290m/u/blob/master/doc/demo_2.png)
+![效果图1](/doc/demo_1.png)
+![效果图2](/doc/demo_2.png)
   待完善...
 ###  环境需要
 - Java 1.8.0_211
