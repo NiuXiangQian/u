@@ -13,7 +13,7 @@ github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m
 - 支持更丰富的api操作
 - ...
 ### Web方式效果图
-![效果图1/doc/demo_1.png](doc/demo_1 .png)
+![效果图1/doc/demo_1.png](doc/demo_1.png)
 ![效果图2/doc/demo_2.png](doc/demo_2.png)
   待完善...
   
