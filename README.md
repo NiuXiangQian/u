@@ -15,6 +15,23 @@
 ![效果图2](/doc/demo_2.png)
   待完善...
   
+### API使用
+```
+post http://127.0.0.1:8080/api/v1/generate
+
+body {"ak":"ak_123",
+      "sk":"sk_123",
+       "url":"https://www.baidu.com/s?wd=a&rsv_spt=1&rsv_iqid=0xd1a6a2e5000e2bc1&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_dl=tb&rsv_sug3=1&rsv_sug2=0&rsv_btype=i&inputT=509&rsv_sug4=509"}
+
+respone {"code": 1,
+        	"success": true,
+        	"msg": "ok",
+        	"data": "http://127.0.0.1:8080/u/ff185ccd0439f762"
+        }
+ 
+```
+ak 和 sk 为访问api密钥，上例使用的是在系统类com.github.niu.u.init.BootInit内置的默认的
+  
 ### 核心依赖
   
   | 依赖                   | 版本          |
