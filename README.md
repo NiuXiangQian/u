@@ -1,6 +1,6 @@
 ## u - 短网址平台
 短短短！短得不能再短。缩短你的超链接<br>
-以打造一个高性能，可快速部署的短网址服务平台
+以打造一个高性能，可快速部署的短网址服务平台<br>
 gitee地址：[https://gitee.com/m1603565290/url](https://gitee.com/m1603565290/url) <br>
 github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m/u)
 ## 系统说明：
