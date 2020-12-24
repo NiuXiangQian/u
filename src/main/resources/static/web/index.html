@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="/static/css/index.css"  media="all">
+    <title>短网址</title>
+</head>
+<body>
+<div class="container">
+<!--    <h1><img src="/static/images/logo.png" width="180" height="100"></h1>-->
+    <h1>短网址生成</h1>
+    <form class="layui-form">
+    <div class="layui-form-item layui-form-text" >
+        <div class="layui-input-block">
+            <textarea placeholder="请输入链接" class="layui-textarea"  id="url_textarea" required></textarea>
+        </div>
+    </div>
+        <button class="layui-btn login_btn" lay-submit="" lay-filter="generate">生成</button>
+    </form>
+    <div id="result_div">
+        <p id="result_p"><a  id="result_a" target="_blank" href=""></a></p>
+    </div>
+</div>
+<script type="text/javascript" src="/static/layui/layui.js"></script>
+<script type="text/javascript" src="/static/js/index.js"></script>
+</body>
+</html>
