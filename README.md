@@ -14,11 +14,37 @@
 ![效果图1](/doc/demo_1.png)
 ![效果图2](/doc/demo_2.png)
   待完善...
+  
+### 核心依赖
+  
+  | 依赖                   | 版本          |
+  | ---------------------- | ------------- |
+  | Spring Boot            | 2.3.6.RELEASE |
+  | Spring Boot Redis      | 2.3.6.RELEASE  |
+  | layui                  | 2.5.7        |
+
 ###  环境需要
 - Java 1.8.0_211
 - Maven 3.6.3
 - Redis  3.x
 
+### application.yml修改
+```bash
+spring:
+  redis:
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+#    password:
+short_url:
+  server: http://127.0.0.1:8080  #这里是短网址服务器地址
+```
 
 
+### 其他说明
+
+
+1. 欢迎提交 [issue](https://github.com/1603565290m/u/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
+
+2. 联系作者QQ：1603565290
 
