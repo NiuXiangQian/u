@@ -7,7 +7,7 @@
 短短短！短得不能再短。缩短你的超链接<br>
 以打造一个高性能，可快速部署的短网址服务平台<br>
 gitee地址：[https://gitee.com/m1603565290/url](https://gitee.com/m1603565290/url) <br>
-github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m/u)
+github地址：[https://github.com/NiuXiangQian/u](https://github.com/NiuXiangQian/u)
 
 ### 我能干什么
 短链接我们或多或少都使用过，所谓短链接就是根据较长的原链接url生成一段较短的链接，访问短链接可以跳转到对应的原链接，这样做好处在于：1. url更加美观；2. 便于保存和传播；3. 某些网站内容发布有字数限制，短链接可以节约字数。<br>
