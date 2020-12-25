@@ -97,7 +97,7 @@ short_url:
 ## 其他说明
 
 
-1. 欢迎提交 [issue](https://github.com/1603565290m/u/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
+1. 欢迎提交 [issue](https://github.com/NiuXiangQian/u/issues)，请写清楚遇到问题的原因、开发环境、复显步骤。
 2. 有更多的功能想法欢迎提出
 3. 联系作者QQ：1603565290
 4. 博客地址：https://laoniu.blog.csdn.net/article/details/111696071
