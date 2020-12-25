@@ -1,7 +1,7 @@
-![Github issues](https://img.shields.io/github/issues/1603565290m/u)
-![Github stars](https://img.shields.io/github/stars/1603565290m/u)
-![GitHub forks](https://img.shields.io/github/forks/1603565290m/u)
-![GitHub license](https://img.shields.io/github/license/1603565290m/u)
+![Github issues](https://img.shields.io/github/issues/NiuXiangQian/u)
+![Github stars](https://img.shields.io/github/stars/NiuXiangQian/u)
+![GitHub forks](https://img.shields.io/github/forks/NiuXiangQian/u)
+![GitHub license](https://img.shields.io/github/license/NiuXiangQian/u)
 
 ## u - 短网址平台
 短短短！短得不能再短。缩短你的超链接<br>
