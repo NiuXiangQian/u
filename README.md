@@ -22,7 +22,7 @@ github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m
   待完善...
   
 ### API方式使用
-_**`Access Key Id（AK）用于标示用户，Secret Access Key（SK）是用户用于加密认证字符串和云厂商用来验证认证字符串的密钥`**_<br>
+ **`Access Key Id（AK）用于标示用户，Secret Access Key（SK）是用户用于加密认证字符串和云厂商用来验证认证字符串的密钥`**<br>
 - 首先需要ak和sk的授权才可以访问api接口，当然你可以在你系统中取消此项认证<br>
 在com.github.niu.u.config.WebConfig中中注释掉如下代码即可取消认证<br>
 ```
