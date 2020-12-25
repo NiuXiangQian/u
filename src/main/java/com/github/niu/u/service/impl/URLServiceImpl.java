@@ -38,6 +38,7 @@ public class URLServiceImpl implements URLService {
         if (valid!= -1 && valid <0){
             throw new BaseException("有效时间非法");
         }
+        srcUrl = srcUrl.trim();
        String shortURL =  MD5Util.encryptStr( srcUrl);
        String key = CommonCache.SHORT_URL+shortURL;
         redisTemplate.opsForValue().set(key,srcUrl);

@@ -1,7 +1,5 @@
 package com.github.niu.u.model.req;
 
-
-import com.github.niu.u.model.req.AkSkReq;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**

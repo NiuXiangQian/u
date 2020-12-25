@@ -29,10 +29,15 @@ public class UController {
         if (StringUtils.isNotBlank(shortUrl)){
            String url =  redisTemplate.opsForValue().get(CommonCache.SHORT_URL+shortUrl);
            if (StringUtils.isNotBlank(url))
+               if (!(url.startsWith("http://")||url.startsWith("https://"))){
+                url = "http://"+url;
+               }
               response.sendRedirect(url);
-           else
-               response.getWriter().write("url is lose efficacy");
+
+            } else{
+                response.getWriter().write("url is lose efficacy");
+            }
         }
 
     }
-}
+
