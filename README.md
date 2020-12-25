@@ -24,7 +24,8 @@ github地址：[https://github.com/1603565290m/u](https://github.com/1603565290m
 ### Web方式效果图
 ![效果图1](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_1.png)
 ![效果图2](https://niu-github.oss-cn-beijing.aliyuncs.com/u/demo_2.png)
-  待完善...
+ ![操作](
+https://niu-github.oss-cn-beijing.aliyuncs.com/u/opt.gif)
   
 ### API方式使用
  **`Access Key Id（AK）用于标示用户，Secret Access Key（SK）是用户用于加密认证字符串和云厂商用来验证认证字符串的密钥`**<br>
