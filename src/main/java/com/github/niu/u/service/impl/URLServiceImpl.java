@@ -46,10 +46,10 @@ public class URLServiceImpl implements URLService {
            redisTemplate.expire(key,valid, TimeUnit.SECONDS);
        }
         ShortUrlVo shortUrlVo = new ShortUrlVo();
-       shortUrlVo.setOrgUrl(srcUrl);
-       shortUrlVo.setShortTarget(shortURL);
-       shortUrlVo.setValidTime(valid);
-       shortUrlVo.setShortUrl(generateShortUrl(shortURL));
+       shortUrlVo.setOrgUrl(srcUrl)
+               .setShortTarget(shortURL)
+               .setValidTime(valid)
+               .setShortUrl(generateShortUrl(shortURL));
 
         return shortUrlVo;
     }
