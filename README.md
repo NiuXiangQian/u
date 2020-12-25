@@ -1,3 +1,8 @@
+![Github issues](https://img.shields.io/github/issues/1603565290m/u)
+![Github stars](https://img.shields.io/github/stars/1603565290m/u)
+![GitHub forks](https://img.shields.io/github/forks/1603565290m/u)
+![GitHub license](https://img.shields.io/github/license/1603565290m/u)
+
 ## u - 短网址平台
 短短短！短得不能再短。缩短你的超链接<br>
 以打造一个高性能，可快速部署的短网址服务平台<br>
