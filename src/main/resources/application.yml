@@ -1,8 +1,11 @@
+server:
+  port: 8080
+
 spring:
-  redis:
-    database: 1
-    host: 127.0.0.1
-    port: 6379
-#    password:
-short_url:
-  server: http://127.0.0.1:8080
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: '@profileActive@'
+logging:
+  file:
+    path: ./logs
