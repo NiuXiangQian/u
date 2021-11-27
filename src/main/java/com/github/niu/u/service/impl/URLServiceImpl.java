@@ -1,8 +1,10 @@
 package com.github.niu.u.service.impl;
 
 import com.github.niu.u.common.CommonCache;
+import com.github.niu.u.common.CommonConfig;
 import com.github.niu.u.common.exception.BaseException;
 import com.github.niu.u.common.util.MD5Util;
+import com.github.niu.u.config.redis.RedisService;
 import com.github.niu.u.model.vo.ShortUrlVo;
 import com.github.niu.u.service.URLService;
 import org.apache.commons.lang.StringUtils;
@@ -25,12 +27,12 @@ public class URLServiceImpl implements URLService {
     @Value("${short_url.server:http://127.0.0.1:8080}")
     private String shortUrlServer;
     @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private RedisService redisService;
 
     @Override
     public ShortUrlVo generate(String srcUrl, Long valid) throws BaseException {
         if (valid == null) {
-            valid = 60L * 60L * 4L;  // 默认有效时间4个小时
+            valid = CommonConfig.defaultValidTime;  // 默认有效时间4个小时
         }
         if (valid != -1 && valid < 0) {
             throw new BaseException("有效时间非法");
@@ -38,9 +40,10 @@ public class URLServiceImpl implements URLService {
         srcUrl = srcUrl.trim();
         String shortURL = MD5Util.encryptStr(srcUrl);
         String key = CommonCache.SHORT_URL + shortURL;
-        redisTemplate.opsForValue().set(key, srcUrl);
-        if (valid != -1) { // -1是永久有效
-            redisTemplate.expire(key, valid, TimeUnit.SECONDS);
+        if (valid == -1) { // -1是永久有效 慎重
+            redisService.set(key, srcUrl);
+        } else {
+            redisService.set(key, srcUrl, valid, TimeUnit.SECONDS);
         }
         ShortUrlVo shortUrlVo = new ShortUrlVo();
         shortUrlVo.setOrgUrl(srcUrl)
@@ -54,11 +57,11 @@ public class URLServiceImpl implements URLService {
     @Override
     public ShortUrlVo restoreByTarget(String shortTarget) throws BaseException {
         Objects.requireNonNull(shortTarget);
-        String srcUrl = redisTemplate.opsForValue().get(CommonCache.SHORT_URL + shortTarget);
+        String srcUrl = redisService.get(CommonCache.SHORT_URL + shortTarget);
         if (StringUtils.isBlank(srcUrl)) {
             throw new BaseException("短链接不存在或者已经失效");
         }
-        Long validTime = redisTemplate.getExpire(CommonCache.SHORT_URL + shortTarget);
+        Long validTime = redisService.getExpire(CommonCache.SHORT_URL + shortTarget);
         String shortUrl = generateShortUrl(shortTarget);
         ShortUrlVo shortUrlVo = new ShortUrlVo();
         shortUrlVo.setShortUrl(shortUrl)

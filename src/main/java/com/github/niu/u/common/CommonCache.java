@@ -13,9 +13,9 @@ public interface CommonCache {
      */
     String SHORT_URL = "u:short_url:";
 
-    /**
+    /** Default
      * api访问ak_sk前缀key
      */
-    String Ak_SK ="u:ak_sk:";
+    String DEFAULT_Ak_SK ="u:ak_sk:";
 
 }

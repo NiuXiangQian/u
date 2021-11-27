@@ -6,7 +6,6 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * 
@@ -15,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
  * @since 2020/12/24 12:05 下午
  **/
 @Service
-public class ApiAccessServiceImpl implements ApiAccessService {
+public class DefaultApiAccessServiceImpl implements ApiAccessService {
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
@@ -23,7 +22,7 @@ public class ApiAccessServiceImpl implements ApiAccessService {
     public boolean acceptAccess(String ak, String sk) {
         if (StringUtils.isEmpty(ak)|| StringUtils.isEmpty(sk))
             return false;
-        Object accSk= redisTemplate.opsForHash().get(CommonCache.Ak_SK,ak);
+        Object accSk= redisTemplate.opsForHash().get(CommonCache.DEFAULT_Ak_SK,ak);
         return accSk!=null && accSk.equals(sk);
     }
 }
