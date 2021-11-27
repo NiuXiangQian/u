@@ -1,13 +1,10 @@
 package com.github.niu.u.common.enums;
 
 /**
- * @description: 状态吗设置
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/21 7:46 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/21 7:46 下午
- * @updateRemark:
- * @version: 1.0
+ *  状态吗设置
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/21 7:46 下午
  **/
 public enum ResultCode {
 	/* 通用状态码 成功与失败 */

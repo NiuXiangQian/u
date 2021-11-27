@@ -1,19 +1,16 @@
 package com.github.niu.u.common.core;
 
 
-
 import com.github.niu.u.common.enums.ResultCode;
 
 import java.io.Serializable;
 
 /**
- * @description: 响应类
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/21 7:37 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/21 7:37 下午
- * @updateRemark:
- * @version: 1.0
+ * 响应类
+ *
+ * @author niuxiangqian
+ * @since 2020/12/21 7:37 下午
+ * @version 1.0
  **/
 public class R<T> implements Serializable {
 
@@ -24,7 +21,7 @@ public class R<T> implements Serializable {
     private T data; //数据
 
     public static <T> R<T> ok() {
-        return restResult(null, ResultCode.SUCCESS.getCode(),  ResultCode.SUCCESS.getMsg());
+        return restResult(null, ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg());
     }
 
     public static <T> R<T> ok(T data) {
@@ -38,6 +35,7 @@ public class R<T> implements Serializable {
     public static <T> R<T> failed() {
         return restResult(null, ResultCode.FAILED.getCode(), ResultCode.FAILED.getMsg());
     }
+
     public static <T> R<T> failed(String msg) {
         return restResult(null, ResultCode.FAILED.getCode(), msg);
     }
@@ -45,7 +43,8 @@ public class R<T> implements Serializable {
     public static <T> R<T> failed(ResultCode resultCode) {
         return restResult(null, resultCode.getCode(), resultCode.getMsg());
     }
-    public static <T> R<T> failed(Integer code,String msg) {
+
+    public static <T> R<T> failed(Integer code, String msg) {
         return restResult(null, code, msg);
     }
 

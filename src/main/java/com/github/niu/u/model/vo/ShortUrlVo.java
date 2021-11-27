@@ -1,19 +1,17 @@
 package com.github.niu.u.model.vo;
 
 /**
- * @description: 短网址vo
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/24 4:40 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/24 4:40 下午
- * @updateRemark:
- * @version: 1.0
+ * 短网址vo
+ *
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/24 4:40 下午
  **/
 public class ShortUrlVo {
     private String orgUrl; //原url
     private String shortUrl; //短网址url
     private String shortTarget; //短网址标记
-    private Long   validTime;//有效时间
+    private Long validTime;//有效时间
 
     public String getOrgUrl() {
         return orgUrl;

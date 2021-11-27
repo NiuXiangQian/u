@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * @description: api接口
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/24 11:48 上午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/24 11:48 上午
- * @updateRemark:
- * @version: 1.0
+ *  api接口
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/24 11:48 上午
  **/
 @RestController
 @RequestMapping("/api/v1")

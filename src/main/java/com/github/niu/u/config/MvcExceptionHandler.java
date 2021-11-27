@@ -24,13 +24,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @description:
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/24 12:28 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/24 12:28 下午
- * @updateRemark:
- * @version: 1.0
+ * 
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/24 12:28 下午
  **/
 @RestControllerAdvice
 @ResponseBody

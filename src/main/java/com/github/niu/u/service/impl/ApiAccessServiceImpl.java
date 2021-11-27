@@ -9,13 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @description:
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/24 12:05 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/24 12:05 下午
- * @updateRemark:
- * @version: 1.0
+ * 
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/24 12:05 下午
  **/
 @Service
 public class ApiAccessServiceImpl implements ApiAccessService {

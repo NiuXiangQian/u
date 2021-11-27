@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @description: url控制器
- * @author: nxq email: niuxiangqian163@163.com
- * @createDate: 2020/12/23 8:48 下午
- * @updateUser: nxq email: niuxiangqian163@163.com
- * @updateDate: 2020/12/23 8:48 下午
- * @updateRemark:
- * @version: 1.0
+ * url控制器
+ *
+ * @author niuxiangqian
+ * @version 1.0
+ * @since 2020/12/23 8:48 下午
  **/
 @RestController
 @RequestMapping("url")
@@ -26,8 +24,8 @@ public class URLController {
     private URLService urlService;
 
     @RequestMapping("/generate")
-    public R<Object> generate(String url,Integer validTime) throws BaseException {
-        if (StringUtils.isEmpty(url)){
+    public R<Object> generate(String url, Integer validTime) throws BaseException {
+        if (StringUtils.isEmpty(url)) {
             return R.failed("url不能为空");
         }
         ShortUrlVo shortURL = urlService.generate(url,
