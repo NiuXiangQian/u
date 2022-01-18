@@ -1,7 +1,6 @@
 package com.github.niu.u.controller;
 
 import com.github.niu.u.common.CommonCache;
-import com.github.niu.u.config.redis.RedisService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -21,22 +20,22 @@ import java.io.IOException;
  **/
 @RestController
 public class UController {
-
     @Autowired
-    private RedisService redisService;
+    private RedisTemplate<String, String> redisTemplate;
 
     @GetMapping("/u/{shortUrl}")
     public void u(HttpServletResponse response, @PathVariable String shortUrl) throws IOException {
         if (StringUtils.isNotBlank(shortUrl)) {
-            String url = redisService.get(CommonCache.SHORT_URL + shortUrl);
-            if (StringUtils.isNotBlank(url)) {
+            String url = redisTemplate.opsForValue().get(CommonCache.SHORT_URL + shortUrl);
+            if (StringUtils.isNotBlank(url))
                 if (!(url.startsWith("http://") || url.startsWith("https://"))) {
                     url = "http://" + url;
                 }
-                response.sendRedirect(url);
-            }
+            response.sendRedirect(url);
+
+        } else {
+            response.getWriter().write("url is lose efficacy");
         }
-        response.getWriter().write("url is lose efficacy");
     }
 
 }
