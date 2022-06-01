@@ -4,7 +4,7 @@
 ![GitHub license](https://img.shields.io/github/license/NiuXiangQian/u)
 
 
-个人站点：![搬砖的码农:https://refblogs.com](https://refblogs.com)
+个人站点：[搬砖的码农:https://refblogs.com](https://refblogs.com)
 
 
 ## u - 短网址平台
