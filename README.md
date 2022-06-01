@@ -3,6 +3,10 @@
 ![GitHub forks](https://img.shields.io/github/forks/NiuXiangQian/u)
 ![GitHub license](https://img.shields.io/github/license/NiuXiangQian/u)
 
+
+个人站点：![搬砖的码农:https://refblogs.com](https://refblogs.com)
+
+
 ## u - 短网址平台
 短短短！短得不能再短。缩短你的超链接<br>
 以打造一个高性能，可快速部署的短网址服务平台<br>
