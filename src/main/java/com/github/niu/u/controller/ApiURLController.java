@@ -7,9 +7,9 @@ import com.github.niu.u.model.vo.ShortUrlVo;
 import com.github.niu.u.service.ApiAccessService;
 import com.github.niu.u.service.URLService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 
 /**
@@ -21,12 +21,10 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/v1")
 public class ApiURLController {
-    @Autowired
+    @Resource
     private ApiAccessService apiAccessService;
-    @Autowired
+    @Resource
     private URLService urlService;
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
 
     /**
      * 生成一个短链接

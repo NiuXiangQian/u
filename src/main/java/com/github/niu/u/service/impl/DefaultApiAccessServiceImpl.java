@@ -1,11 +1,13 @@
 package com.github.niu.u.service.impl;
 
 import com.github.niu.u.common.CommonCache;
+import com.github.niu.u.config.redis.RedisService;
 import com.github.niu.u.service.ApiAccessService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * 
@@ -15,14 +17,15 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 public class DefaultApiAccessServiceImpl implements ApiAccessService {
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    @Resource
+    private RedisService redisService;
 
     @Override
     public boolean acceptAccess(String ak, String sk) {
-        if (StringUtils.isEmpty(ak)|| StringUtils.isEmpty(sk))
+        if (StringUtils.isEmpty(ak)|| StringUtils.isEmpty(sk)){
             return false;
-        Object accSk= redisTemplate.opsForHash().get(CommonCache.DEFAULT_Ak_SK,ak);
+        }
+        String accSk= redisService.hashGet(CommonCache.DEFAULT_Ak_SK,ak);
         return accSk!=null && accSk.equals(sk);
     }
 }

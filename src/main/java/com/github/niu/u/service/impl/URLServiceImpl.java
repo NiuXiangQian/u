@@ -10,9 +10,9 @@ import com.github.niu.u.service.URLService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +26,7 @@ public class URLServiceImpl implements URLService {
 
     @Value("${short_url.server:http://127.0.0.1:8080}")
     private String shortUrlServer;
-    @Autowired
+    @Resource
     private RedisService redisService;
 
     @Override

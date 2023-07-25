@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.annotation.Resource;
+
 /**
  * 
  * @author niuxiangqian
@@ -14,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  **/
 @Component
 public class WebConfig implements WebMvcConfigurer {
-    @Autowired
+    @Resource
     private ApiAccessInterceptor apiAccessInterceptor;
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

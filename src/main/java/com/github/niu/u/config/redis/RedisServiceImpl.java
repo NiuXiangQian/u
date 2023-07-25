@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -20,8 +21,8 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisServiceImpl implements RedisService {
 
-    @Autowired
-    private RedisTemplate redisTemplate;
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public <T> void set(String key, T value) {
@@ -101,8 +102,9 @@ public class RedisServiceImpl implements RedisService {
     public void hashPut(String key, String hashKey, Object value) {
         redisTemplate.opsForHash().put(key, hashKey, value);
     }
+
     @Override
     public <T> T hashGet(String key, String hashKey) {
-        return (T)redisTemplate.opsForHash().get(key, hashKey);
+        return (T) redisTemplate.opsForHash().get(key, hashKey);
     }
 }
