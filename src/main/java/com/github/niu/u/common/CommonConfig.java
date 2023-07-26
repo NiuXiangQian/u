@@ -8,6 +8,8 @@ package com.github.niu.u.common;
  **/
 public interface CommonConfig {
 
-    /* 默认有效时间 */
-    long defaultValidTime = 60L * 60L * 4L;
+    /**
+     * 默认有效时间
+     */
+    long DEFAULT_VALID_TIME = 60L * 60L * 24L * 3;
 }
