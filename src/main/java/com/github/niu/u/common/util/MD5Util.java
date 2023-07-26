@@ -1,5 +1,6 @@
 package com.github.niu.u.common.util;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.util.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
@@ -12,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  **/
 public class MD5Util {
     public static String encryptStr(String str){
-        return  DigestUtils.md5DigestAsHex(str.getBytes(StandardCharsets.UTF_8)).substring(8,24);
+        return  DigestUtils.md5DigestAsHex(str.getBytes(StandardCharsets.UTF_8)).substring(8,17)+ RandomStringUtils.random(3);
 
     }
 }

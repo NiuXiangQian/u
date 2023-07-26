@@ -3,6 +3,6 @@ spring:
     database: 3
     host: 127.0.0.1
     port: 6379
-    password: root
+#    password: root
 short_url:
   server: http://127.0.0.1:8080
