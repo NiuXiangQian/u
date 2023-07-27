@@ -1,14 +1,50 @@
-body{overflow:hidden;background-size: cover;}
-.container{ height:260px;width:800px;
-    padding: 30px;border:1px solid white;
-    box-shadow: darkgrey 5px 5px 30px 30px;border-radius: 4px;margin: auto;  margin-top: 50px; z-index:99;}
-.container h1{ text-align:center; color:#0C0C0C; font-size:24px; margin-bottom:20px; }
- .code{ position:absolute; right:0; top:1px; cursor:pointer; }
-.login_btn{ width:100%; }
-.layui-input-block{
+body {
+    overflow: hidden;
+    background-size: cover;
+}
+
+.container {
+    height: 260px;
+    width: 800px;
+    padding: 30px;
+    border: 1px solid white;
+    box-shadow: darkgrey 5px 5px 30px 30px;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 50px;
+    z-index: 99;
+}
+
+.container h1 {
+    text-align: center;
+    color: #0C0C0C;
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+.container h4,.container h4 a  {
+    text-align: center;
+    color: #214283;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.code {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    cursor: pointer;
+}
+
+.login_btn {
+    width: 100%;
+}
+
+.layui-input-block {
     margin-left: 0;
 }
-#result_div{
+
+#result_div {
     border-radius: 4px;
     margin-top: 20px;
     background-color: #418c41;
@@ -16,10 +52,12 @@ body{overflow:hidden;background-size: cover;}
     width: 100%;
     display: none;
 }
-#result_p{
+
+#result_p {
     color: azure;
     font-size: 20px;
 }
-#result_a{
+
+#result_a {
     color: azure;
 }

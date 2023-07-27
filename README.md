@@ -2,17 +2,12 @@
 ![Github stars](https://img.shields.io/github/stars/NiuXiangQian/u)
 ![GitHub forks](https://img.shields.io/github/forks/NiuXiangQian/u)
 ![GitHub license](https://img.shields.io/github/license/NiuXiangQian/u)
-
-
-个人站点：[搬砖的码农:https://refblogs.com](https://refblogs.com)
-
-
+<br/>
+github地址：[https://github.com/NiuXiangQian/u](https://github.com/NiuXiangQian/u)
 ## u - 短网址平台
 短短短！短得不能再短。缩短你的超链接<br>
 以打造一个高性能，可快速部署的短网址服务平台<br>
-gitee地址：[https://gitee.com/m1603565290/url](https://gitee.com/m1603565290/url) <br>
-github地址：[https://github.com/NiuXiangQian/u](https://github.com/NiuXiangQian/u)
-
+预览地址: [http://u.refblogs.com/](http://u.refblogs.com/)<br>
 ### 我能干什么
 短链接我们或多或少都使用过，所谓短链接就是根据较长的原链接url生成一段较短的链接，访问短链接可以跳转到对应的原链接，这样做好处在于：1. url更加美观；2. 便于保存和传播；3. 某些网站内容发布有字数限制，短链接可以节约字数。<br>
 我只为缩短你的超链接url，让你变得短短的，不。。。是你的url变得短短的。

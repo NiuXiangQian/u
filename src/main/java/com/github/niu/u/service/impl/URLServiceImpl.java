@@ -31,13 +31,13 @@ public class URLServiceImpl implements URLService {
     @Override
     public ShortUrlVo generate(String srcUrl, Long valid){
         if (valid == null) {
-            valid = CommonConfig.defaultValidTime;  // 默认有效时间4个小时
+            valid = CommonConfig.DEFAULT_VALID_TIME;  // 默认有效时间3天
         }
         if (valid != -1 && valid < 0) {
             throw new BaseException("有效时间非法");
         }
         srcUrl = srcUrl.trim();
-        String shortURL = MD5Util.encryptStr(srcUrl);
+        String shortURL = MD5Util.encryptStr(srcUrl + System.currentTimeMillis());
         String key = CommonCache.SHORT_URL + shortURL;
         if (valid == -1) { // -1是永久有效 慎重
             redisService.set(key, srcUrl);

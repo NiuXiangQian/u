@@ -18,7 +18,7 @@ layui.config().use(['form','jquery','layer'], function(){
                 },
                 dataType:'json',
                 beforeSend: function(re){
-                    index = top.layer.msg('生成中',{icon: 16,time:false,shade:0.8});
+                    index = top.layer.msg('生成中',{icon: 16,time:false});
                 },
                 success:function(d){
                     var r=d.result;
