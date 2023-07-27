@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    height: 260px;
+    height: 300px;
     width: 800px;
     padding: 30px;
     border: 1px solid white;
@@ -45,6 +45,7 @@ body {
 }
 
 #result_div {
+    padding: 5px 2px;
     border-radius: 4px;
     margin-top: 20px;
     background-color: #418c41;
