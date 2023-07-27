@@ -26,12 +26,11 @@ public class URLController {
     private URLService urlService;
 
     @RequestMapping("/generate")
-    public R<Object> generate(String url, Long validTime) throws BaseException {
-        if (StringUtils.isEmpty(url)) {
+    public R<Object> generate(String url, Long validTime){
+        if (StringUtils.isNotBlank(url)) {
             return R.failed("url不能为空");
         }
-        ShortUrlVo shortURL = urlService.generate(url, validTime);
 
-        return R.ok(shortURL);
+        return R.ok(urlService.generate(url, validTime));
     }
 }

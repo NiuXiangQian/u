@@ -6,7 +6,7 @@ package com.github.niu.u.common.exception;
  * @version 1.0
  * @since 2020/12/23 9:15 下午
  **/
-public class BaseException  extends Exception{
+public class BaseException  extends RuntimeException{
 
     public BaseException(String message) {
         super(message);

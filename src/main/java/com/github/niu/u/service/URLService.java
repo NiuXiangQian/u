@@ -20,7 +20,7 @@ public interface URLService {
      * @return java.lang.String
      * @author nxq
      */
-    ShortUrlVo generate(String srcUrl, Long valid) throws BaseException;
+    ShortUrlVo generate(String srcUrl, Long valid);
 
     /**
      * 根据短网址target标记解析原网址
@@ -29,7 +29,7 @@ public interface URLService {
      * @return com.github.niu.u.model.vo.ShortUrlVo
      * @author nxq
      */
-    ShortUrlVo restoreByTarget(String shortTarget) throws BaseException;
+    ShortUrlVo restoreByTarget(String shortTarget);
 
     /**
      * 根据短网址target标记解析原网址
@@ -38,5 +38,5 @@ public interface URLService {
      * @return com.github.niu.u.model.vo.ShortUrlVo
      * @author nxq
      */
-    ShortUrlVo restoreByShortUrl(String shortUrl) throws BaseException;
+    ShortUrlVo restoreByShortUrl(String shortUrl);
 }

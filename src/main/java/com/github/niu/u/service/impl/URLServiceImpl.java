@@ -8,7 +8,6 @@ import com.github.niu.u.config.redis.RedisService;
 import com.github.niu.u.model.vo.ShortUrlVo;
 import com.github.niu.u.service.URLService;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +29,7 @@ public class URLServiceImpl implements URLService {
     private RedisService redisService;
 
     @Override
-    public ShortUrlVo generate(String srcUrl, Long valid) throws BaseException {
+    public ShortUrlVo generate(String srcUrl, Long valid){
         if (valid == null) {
             valid = CommonConfig.defaultValidTime;  // 默认有效时间4个小时
         }
@@ -55,7 +54,7 @@ public class URLServiceImpl implements URLService {
     }
 
     @Override
-    public ShortUrlVo restoreByTarget(String shortTarget) throws BaseException {
+    public ShortUrlVo restoreByTarget(String shortTarget){
         Objects.requireNonNull(shortTarget);
         String srcUrl = redisService.get(CommonCache.SHORT_URL + shortTarget);
         if (StringUtils.isBlank(srcUrl)) {
@@ -81,7 +80,7 @@ public class URLServiceImpl implements URLService {
      * @author nxq
      */
     @Override
-    public ShortUrlVo restoreByShortUrl(String shortUrl) throws BaseException {
+    public ShortUrlVo restoreByShortUrl(String shortUrl){
         Objects.requireNonNull(shortUrl);
         if (!shortUrl.contains("/u/")) {
             throw new BaseException("短链接不合法");
