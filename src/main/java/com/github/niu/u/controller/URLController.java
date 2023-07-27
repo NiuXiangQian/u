@@ -31,7 +31,7 @@ public class URLController {
     @RequestMapping("/generate")
     public R<Object> generate(String url, Long validTime) {
         logger.info("url:{},validTime:{}", url, validTime);
-        if (StringUtils.isNotBlank(url)) {
+        if (StringUtils.isBlank(url)) {
             return R.failed("url不能为空");
         }
 

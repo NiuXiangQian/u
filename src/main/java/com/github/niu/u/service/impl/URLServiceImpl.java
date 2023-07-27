@@ -29,7 +29,10 @@ public class URLServiceImpl implements URLService {
     private RedisService redisService;
 
     @Override
-    public ShortUrlVo generate(String srcUrl, Long valid){
+    public ShortUrlVo generate(String srcUrl, Long valid) {
+        if (StringUtils.isBlank(srcUrl)) {
+            throw new BaseException("srcUrl不能为空");
+        }
         if (valid == null) {
             valid = CommonConfig.DEFAULT_VALID_TIME;  // 默认有效时间3天
         }
@@ -54,7 +57,7 @@ public class URLServiceImpl implements URLService {
     }
 
     @Override
-    public ShortUrlVo restoreByTarget(String shortTarget){
+    public ShortUrlVo restoreByTarget(String shortTarget) {
         Objects.requireNonNull(shortTarget);
         String srcUrl = redisService.get(CommonCache.SHORT_URL + shortTarget);
         if (StringUtils.isBlank(srcUrl)) {
@@ -80,7 +83,7 @@ public class URLServiceImpl implements URLService {
      * @author nxq
      */
     @Override
-    public ShortUrlVo restoreByShortUrl(String shortUrl){
+    public ShortUrlVo restoreByShortUrl(String shortUrl) {
         Objects.requireNonNull(shortUrl);
         if (!shortUrl.contains("/u/")) {
             throw new BaseException("短链接不合法");
