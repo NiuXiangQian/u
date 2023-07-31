@@ -26,7 +26,7 @@ public class UController {
 
     @GetMapping("/u/{shortUrl}")
     public void u(HttpServletResponse response, @PathVariable String shortUrl) throws IOException {
-        redisService.zIncrementScore(CommonCache.SHORT_URL, shortUrl);
+        redisService.zIncrementScore(CommonCache.ACCESS_COUNT, shortUrl);
         if (StringUtils.isNotBlank(shortUrl)) {
             String url = redisService.get(CommonCache.SHORT_URL + shortUrl);
             if (StringUtils.isNotBlank(url)) {
