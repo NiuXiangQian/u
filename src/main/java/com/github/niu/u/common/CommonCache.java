@@ -1,10 +1,11 @@
 package com.github.niu.u.common;
 
 /**
- *  缓存
+ * 缓存
+ *
  * @author niuxiangqian
- * @since 2020/12/23 9:05 下午
  * @version 1.0
+ * @since 2020/12/23 9:05 下午
  **/
 public interface CommonCache {
 
@@ -13,9 +14,15 @@ public interface CommonCache {
      */
     String SHORT_URL = "u:short_url:";
 
-    /** Default
+    /**
+     * Default
      * api访问ak_sk前缀key
      */
-    String DEFAULT_Ak_SK ="u:ak_sk:";
+    String DEFAULT_AK_SK = "u:ak_sk:";
+
+    /**
+     * 访问统计
+     */
+    String ACCESS_COUNT = "u:access_count:zset";
 
 }

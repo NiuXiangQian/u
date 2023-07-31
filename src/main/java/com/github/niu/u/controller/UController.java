@@ -26,9 +26,10 @@ public class UController {
 
     @GetMapping("/u/{shortUrl}")
     public void u(HttpServletResponse response, @PathVariable String shortUrl) throws IOException {
+        redisService.zIncrementScore(CommonCache.SHORT_URL, shortUrl);
         if (StringUtils.isNotBlank(shortUrl)) {
             String url = redisService.get(CommonCache.SHORT_URL + shortUrl);
-            if (StringUtils.isNotBlank(url)){
+            if (StringUtils.isNotBlank(url)) {
                 if (!(url.startsWith("http://") || url.startsWith("https://"))) {
                     url = "http://" + url;
                 }
