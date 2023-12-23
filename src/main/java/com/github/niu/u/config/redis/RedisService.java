@@ -38,7 +38,11 @@ public interface RedisService {
 
     Set<String> keySet(String keyPrefix);
 
-    void hashPut(String key,String hashKey,Object value);
+    void hashPut(String key, String hashKey, Object value);
 
-   <T> T hashGet(String key, String hashKey);
+    <T> T hashGet(String key, String hashKey);
+
+    void zIncrementScore(String key, String value, Double score);
+
+    void zIncrementScore(String key, String value);
 }

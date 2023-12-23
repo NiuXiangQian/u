@@ -5,7 +5,6 @@ import com.github.niu.u.config.redis.RedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -25,7 +24,7 @@ public class BootInit implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         //先放入一个可用的ak sk
         //后期版本进行丰富此功能
-        redisService.hashPut(CommonCache.DEFAULT_Ak_SK, "ak_123", "sk_123");
+        redisService.hashPut(CommonCache.DEFAULT_AK_SK, "ak_123", "sk_123");
         logger.info("default access api ak and sk is {ak_123},{sk_123}");
 
     }

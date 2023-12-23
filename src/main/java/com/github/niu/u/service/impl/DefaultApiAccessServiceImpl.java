@@ -4,7 +4,6 @@ import com.github.niu.u.common.CommonCache;
 import com.github.niu.u.config.redis.RedisService;
 import com.github.niu.u.service.ApiAccessService;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,7 +24,7 @@ public class DefaultApiAccessServiceImpl implements ApiAccessService {
         if (StringUtils.isEmpty(ak)|| StringUtils.isEmpty(sk)){
             return false;
         }
-        String accSk= redisService.hashGet(CommonCache.DEFAULT_Ak_SK,ak);
+        String accSk= redisService.hashGet(CommonCache.DEFAULT_AK_SK,ak);
         return accSk!=null && accSk.equals(sk);
     }
 }

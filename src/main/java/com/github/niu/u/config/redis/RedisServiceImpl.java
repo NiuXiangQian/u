@@ -107,4 +107,14 @@ public class RedisServiceImpl implements RedisService {
     public <T> T hashGet(String key, String hashKey) {
         return (T) redisTemplate.opsForHash().get(key, hashKey);
     }
+
+    @Override
+    public void zIncrementScore(String key, String value, Double score) {
+        redisTemplate.opsForZSet().incrementScore(key, value, score);
+    }
+
+    @Override
+    public void zIncrementScore(String key, String value) {
+        zIncrementScore(key, value, 1d);
+    }
 }
