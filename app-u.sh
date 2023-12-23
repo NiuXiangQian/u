@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 此脚本仅用于演示的服务流水线部署启动脚本
+
 ROOT_DIR=$(cd $(dirname $0); pwd)
 APP_NAME=app-u.jar
 NOW_DATE=$(date +%c)
@@ -27,7 +29,7 @@ start(){
   if [[ $? -eq "0" ]]; then
     echo "${APP_NAME} 正在运行。 pid=${pid} ."
   else
-    nohup java -jar -Dspring.profiles.active=prod  ${ROOT_DIR}/${APP_NAME}  > ${ROOT_DIR}/nohup.out  2>&1 &
+    nohup java  -Xmx256m -Xms256m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap  -jar -Dspring.profiles.active=prod  ${ROOT_DIR}/${APP_NAME}  > ${ROOT_DIR}/nohup.out  2>&1 &
     echo "${APP_NAME}启动成功，请查看日志确保运行正常。"
     fi
 }
